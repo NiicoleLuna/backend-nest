@@ -9,6 +9,6 @@ export class AppService {
     return 'Hello';
   }
   getHelloFrances(): string {
-    return 'Bonjour';
+    return 'Bonjour new';
   } 
 }
