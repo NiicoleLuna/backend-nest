@@ -11,4 +11,7 @@ export class AppService {
   getHelloFrances(): string {
     return 'Bonjour resuelto';
   } 
+  getHelloAleman(): string {
+    return 'Aleman';
+  } 
 }

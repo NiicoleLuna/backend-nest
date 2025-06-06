@@ -20,6 +20,12 @@ export class AppController {
   //localhost:3000/bonjour
   @Get('bonjour')
   getHelloFrances(): string {
-          return this.appService.getHelloFrances();
+    return this.appService.getHelloFrances();
   }
+  //localhost:3000/bonjour
+  @Get('bonjour')
+  getHelloAleman(): string {
+    return this.appService.getHelloAleman();
+  }
+
 }
