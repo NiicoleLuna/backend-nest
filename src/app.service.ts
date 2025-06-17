@@ -3,15 +3,15 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHola(): string {
-    return 'Hola';
+    return 'Hola!';
   }
   getHello(): string {
-    return 'Hello';
+    return 'Hello!';
   }
   getHelloFrances(): string {
-    return 'Bonjour resuelto';
+    return 'Bonjour resuelto!';
   } 
   getHelloAleman(): string {
-    return 'Aleman';
+    return 'Aleman!';
   } 
 }

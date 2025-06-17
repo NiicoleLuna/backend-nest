@@ -10,7 +10,7 @@ describe('AppController', () => {
   beforeEach(async () => {
 
     mockDbService = {
-      getUser: jest.fn().mockReturnValue({ id: 1, nombre: 'Loreto'}),
+      getUser: jest.fn().mockReturnValue({ id: 7, nombre: 'Juanita'}),
     };
 
     const app: TestingModule = await Test.createTestingModule({
@@ -31,8 +31,8 @@ describe('AppController', () => {
     });
 
     it('Debería buscar un id por usuario', () => {
-      expect(appController.getUser(2342)).toEqual({id: 1, nombre: 'Loreto'});
-      expect(mockDbService.getUser).toHaveBeenLastCalledWith(2342);
+      expect(appController.getUser(12)).toEqual({id: 7, nombre: 'Juanita'});
+      expect(mockDbService.getUser).toHaveBeenLastCalledWith(12);
     });
   });
 });
