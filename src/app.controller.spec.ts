@@ -27,7 +27,7 @@ describe('AppController', () => {
   describe('Probar el modulo raiz del proyecto', () => {
 
     it('should return "Hello"', () => {
-      expect(appController.getHello()).toBe('Hello');
+      expect(appController.getHello()).toBe('Hello!');
     });
 
     it('Debería buscar un id por usuario', () => {
