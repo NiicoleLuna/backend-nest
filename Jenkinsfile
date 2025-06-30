@@ -1,13 +1,23 @@
 pipeline {
     agent any
     // escenarios -> escenario -> pasos
-    environment{
+
+    stages{
+        stage ("saludo a usuario") {
+            steps {
+                sh 'echo "Hola a todos desde el pipeline"'
+                sh 'echo "Saliendo del pipeline"'
+            }
+        }
+    }
+
+    /*environment{
         NPM_CONFIG_CACHE= "${WORKSPACE}/.npm"
         dockerImagePrefix = "us-west1-docker.pkg.dev/lab-agibiz/docker-repository"
         registry = "https://us-west1-docker.pkg.dev"
         registryCredentials = "gcp-registry"
-    }
-    stages{
+    }*/
+    /*stages{
         stage ("saludo a usuario") {
             steps {
                 sh 'echo "comenzado mi pipeline"'
@@ -54,5 +64,5 @@ pipeline {
                 }
             }
         }
-    }
+    }*/
 }
