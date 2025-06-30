@@ -3,47 +3,11 @@ pipeline {
     // escenarios -> escenario -> pasos
     environment{
         NPM_CONFIG_CACHE= "${WORKSPACE}/.npm"
-    }
-    stages{
-        stage ("saludo a usuario") {
-            steps {
-                sh 'echo "comenzado mi pipeline"'
-            }
-        }
-        stage ("salida de los saludos a usuario") {
-            steps {
-                sh 'echo "saliendo de este grupo de escenarios"'
-            }
-        }
-        stage ("proceso de build y test") {
-            agent {
-                docker {
-                    image 'node:22'
-                    reuseNode true
-                }
-            }
-            stages {
-                stage("instalacion de dependencias"){
-                    steps {
-                        sh 'npm ci'
-                    }
-                }
-            }
-            stage("ejecucion de pruebas"){
-                steps {
-                    sh 'npm run test:cov'
-                }
-            }
-        }
-    }
-
-    /*environment{
-        NPM_CONFIG_CACHE= "${WORKSPACE}/.npm"
         dockerImagePrefix = "us-west1-docker.pkg.dev/lab-agibiz/docker-repository"
         registry = "https://us-west1-docker.pkg.dev"
         registryCredentials = "gcp-registry"
-    }*/
-    /*stages{
+    }
+    stages{
         stage ("saludo a usuario") {
             steps {
                 sh 'echo "comenzado mi pipeline"'
@@ -90,5 +54,5 @@ pipeline {
                 }
             }
         }
-    }*/
+    }
 }
